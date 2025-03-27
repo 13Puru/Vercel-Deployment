@@ -21,7 +21,7 @@ app.use(cookieParser());
 app.use(cors({ origin: FrontendAccess, credentials: true }));
 
 app.use("/", (req, res) => {
-  res.send("hii");
+  res.send("StackIT server is healthy!!!!");
 })
 //api endpoints
 app.use("/api/auth", authRouter);//authentication routes
