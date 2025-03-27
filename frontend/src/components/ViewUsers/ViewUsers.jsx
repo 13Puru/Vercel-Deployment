@@ -32,7 +32,7 @@ const ViewUsers = ({setActiveView}) => {
   //API ENDPOINTS
   const API_GET_USER = import.meta.env.VITE_GET_USER;
   const API_RESTRICT = import.meta.env.VITE_RESTRICT;
-  const API_UNRESTRICT = import.meta.env.UNRESTRICT;
+  const API_UNRESTRICT = import.meta.env.VITE_UNRESTRICT;
 
   useEffect(() => {
     fetchUsers();
