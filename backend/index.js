@@ -20,6 +20,9 @@ app.use(express.urlencoded({ extended: true }));  // <-- Handles form data
 app.use(cookieParser());
 app.use(cors({ origin: FrontendAccess, credentials: true }));
 
+app.use("/", (req, res) => {
+  res.send("hii");
+})
 //api endpoints
 app.use("/api/auth", authRouter);//authentication routes
 app.use("/api/ticket", ticketRouter);//ticketing routes
