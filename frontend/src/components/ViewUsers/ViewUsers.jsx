@@ -29,6 +29,11 @@ const ViewUsers = ({setActiveView}) => {
   const [error, setError] = useState(null);
   const [actionInProgress, setActionInProgress] = useState(false);
 
+  //API ENDPOINTS
+  const API_GET_USER = import.meta.env.VITE_GET_USER;
+  const API_RESTRICT = import.meta.env.VITE_RESTRICT;
+  const API_UNRESTRICT = import.meta.env.UNRESTRICT;
+
   useEffect(() => {
     fetchUsers();
   }, []);
@@ -44,7 +49,7 @@ const ViewUsers = ({setActiveView}) => {
         return;
       }
       
-      const response = await axios.get("http://localhost:4000/api/user/get-all-users", {
+      const response = await axios.get(API_GET_USER, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -162,7 +167,7 @@ const ViewUsers = ({setActiveView}) => {
         }
 
         const response = await axios.post(
-          `http://localhost:4000/api/user/users-restrict/${userId}`, 
+          `${API_RESTRICT}/${userId}`, 
           {},  // Empty body
           {
             headers: { Authorization: `Bearer ${token}` }
@@ -199,7 +204,7 @@ const ViewUsers = ({setActiveView}) => {
         }
 
         const response = await axios.post(
-          `http://localhost:4000/api/user/users-unrestrict/${userId}`, 
+          `${API_UNRESTRICT}/${userId}`, 
           {},  // Empty body
           {
             headers: { Authorization: `Bearer ${token}` }
