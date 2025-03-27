@@ -32,7 +32,7 @@ import TicketDetails from "../TicketDetails/TicketDetails";
 // Import utility components and helpers
 import withRoleAccess from "../../hoc/withRoleAccess";
 import statusColors from "../Colors/StatusColors";
-import priorityColors from "../Colors/priorityColors";
+import priorityColors from "../Colors/PriorityColors";
 import actionColors from "../Colors/actionColors";
 
 // Wrap TicketDetails with role-based access control
